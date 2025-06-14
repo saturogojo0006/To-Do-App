@@ -1,0 +1,23 @@
+.leftbar{
+  display: flex;
+  background-color: aliceblue;
+  align-items: center;
+  width: 20vw;
+  border: 1px solid black;
+  flex-direction: column;
+  height: 100vh;
+}
+.rightbar{
+  display: flex;
+ width: 43vw;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+}
+.input{
+   border: 2px solid #e84444; /* Always-visible border */
+   padding: 8px;
+ padding-left:2.5rem;
+ width: 60vw ;
+  border-radius: 2rem;
+}
