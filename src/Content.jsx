@@ -7,7 +7,6 @@ import {arrayMove,SortableContext,sortableKeyboardCoordinates,useSortable,   ver
 import { CSS } from "@dnd-kit/utilities";
 
 
-
 function Draggable({
   Task,
   setTask,
@@ -51,9 +50,9 @@ function Draggable({
 
   const handleDelete = (e) => {
     e.stopPropagation();
-    const taskDeleted = e.target.closest(".draggable-item").querySelector(".task");
+    
     setTask((prev) => prev.filter((item) => item.id !== id));
-    setCompletedTasks([...completedTasks, { id: { id }, msg: taskDeleted.textContent }]);
+    
   };
 
   return (
@@ -102,17 +101,13 @@ function Droppable( {completedTasks,setCompletedTasks,handleCompleteClear}) {
     id: 'droppable',
   });
 
-  const style = {
-  
-    
-    backgroundColor: isOver ? 'lightgreen' : 'white',
-   
-   
+  const style = {    
+    backgroundColor: isOver ? 'lightgreen' : 'white',   
   };
 
   return (
     <div 
-  className="completed border-2 border-dashed rounded-xl w-[40vw] h-[25vh] p-4 transition-colors"
+  className="completed border-2 border-dashed rounded-xl w-[40vw] min-h-[25vh] p-4 transition-colors"
   ref={setNodeRef}
   style={{ backgroundColor: isOver ? '#e6ffed' : 'white' }}
 >
@@ -143,8 +138,6 @@ function Droppable( {completedTasks,setCompletedTasks,handleCompleteClear}) {
 
   )
 }
-
-
 
 
 const Content = ({Task,setTask,setId,completedTasks, setCompletedTasks,setchildData, childData}) => {
@@ -212,4 +205,4 @@ const handleCompleteClear=() =>{
   )
 }
 
-export default Content
+export default Content;
